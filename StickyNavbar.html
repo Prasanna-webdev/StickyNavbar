@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Sticky Navbar</title>
+    <style>
+        /* Resetting some default styles for better aesthetics */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin-top: 50px; /* Ensure content does not overlap with the fixed navbar */
+        }
+
+        /* Styling the Navigation Bar */
+        .navbar {
+            background-color: #3498db; /* Set background color */
+            padding:20px; /* set the padding*/
+            width: 100%; /* Occupy full width of the viewport */
+            top: 0; /* Place the navbar at the top of the viewport */
+            position: fixed; /* Fixed position ensures it stays in place while scrolling */
+            transition: top 0.5s; /* Add transition effect for smooth stickiness */
+            z-index: 1000; /* Ensure the navbar is on top of other elements */
+        }
+
+        /* Style for navbar links */
+        .navbar a {
+            color: white;
+            text-align: center;
+            padding: 14px 16px; /* Add padding for better clickability */
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Styling the Sections */
+        section {
+            padding: 20px;
+        }
+
+        /* Additional styling for a visually appealing design */
+        section:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        section:nth-child(even) {
+            background-color: #e6e6e6;
+        }
+
+        /* Additional styling for demonstration purposes */
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<section id="home">
+    <h2>Home</h2>
+    <p>Welcome to our beautiful home section!</p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Discover more about our amazing journey!</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <p>Explore the top-notch services we provide!</p>
+</section>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <p>Check out our impressive portfolio!</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Get in touch with us for any inquiries!</p>
+</section>
+
+<script>
+    // JavaScript for making the navbar sticky on scroll
+    window.onscroll = function() {
+        var navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.top = "0";
+        } else {
+            navbar.style.top = "-50px";
+        }
+    };
+</script>
+
+</body>
+</html>
